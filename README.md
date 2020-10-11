@@ -4,10 +4,11 @@ Designed to be a simple starting repository for building a REST API using Mongod
 
 ###
 
-Guides:
+Features:
 
 - Implementing Express and Routing
-- Implementing Mongodb
-- Implementing Inventory Application Endpoints
+- Implementing Mongodb connection
+- Implementing Inventory Item Model && Endpoints
+- Adding Location Model && Endpoints relationship to Inventory Items
 - Writing unit tests
 - Wrapping in Docker Containers

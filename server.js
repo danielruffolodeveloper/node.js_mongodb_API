@@ -1,6 +1,18 @@
 const express = require('express')
+const colors = require('colors');
+const morgan = require('morgan');
+const helmet = require('helmet');
+const dotenv = require('dotenv');
+
+
 const app = express()
-require('dotenv').config()
+
+// Load env vars
+dotenv.config({ path: './config/.env' });
+
+// Connect to database
+const connectDB = require('./config/db');
+connectDB();
 
 
 app.get('/', (req, res) => {
@@ -12,5 +24,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(process.env.PORT, () => {
-  console.log(`Example app listening at http://localhost:${process.env.PORT}`)
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`.green.underline.bold)
 })

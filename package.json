@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/danielruffolodeveloper/node.js_mongodb_API#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.1.1",
