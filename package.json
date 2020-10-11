@@ -1,0 +1,27 @@
+{
+  "name": "node.js_mongodb_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielruffolodeveloper/node.js_mongodb_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielruffolodeveloper/node.js_mongodb_API/issues"
+  },
+  "homepage": "https://github.com/danielruffolodeveloper/node.js_mongodb_API#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0"
+  }
+}
