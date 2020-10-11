@@ -3,8 +3,7 @@ const colors = require('colors');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
-
-
+const errorHandler = require('./middleware/error');
 const app = express()
 
 // Load env vars
@@ -13,6 +12,9 @@ dotenv.config({ path: './config/.env' });
 // Connect to database
 const connectDB = require('./config/db');
 connectDB();
+
+app.use(errorHandler);
+
 
 
 app.get('/', (req, res) => {
