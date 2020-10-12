@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 const errorHandler = require('./middleware/error');
 
-
 // Load env vars
 dotenv.config({ path: './config/.env' });
 
@@ -14,6 +13,7 @@ const connectDB = require('./config/db');
 connectDB();
 
 //route files
+const info = require('./routes/info');
 const items = require('./routes/items');
 
 //init express
@@ -22,17 +22,13 @@ const app = express()
 // Body parser
 app.use(express.json());
 
-
-// Base API route
-app.get('/', (req, res) => {
-  res.status(200).json({
-      message:"node.js_mongodb_API",
-      version:"1.0.0",
-      status:process.env.STATUS
-  })
-})
+// Dev logging middleware
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 // Mount routers
+app.use('/api/v1/info', info);
 app.use('/api/v1/items', items);
 
 //error handler middleware
