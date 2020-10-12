@@ -6,9 +6,9 @@ Designed to be a simple starting repository for building a REST API using Mongod
 
 Features:
 
-- Implementing Express and Routing
-- Implementing Mongodb connection
-- Implementing Inventory Item Model && Endpoints
-- Adding Location Model && Endpoints relationship to Inventory Items
+- Implementing Express.js and Routing
+- Implementing MongoDB connection to cloud hosted instance
+- Implementing Item Model && Item CRUD Endpoints
+- Adding Location Model && Location CRUD Endpoints as well as relationship to Inventory Items
 - Writing unit tests
 - Wrapping in Docker Containers

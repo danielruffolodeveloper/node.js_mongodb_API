@@ -16,11 +16,14 @@ connectDB();
 //route files
 const items = require('./routes/items');
 
+//init express
 const app = express()
 
 // Body parser
 app.use(express.json());
 
+
+// Base API route
 app.get('/', (req, res) => {
   res.status(200).json({
       message:"node.js_mongodb_API",
