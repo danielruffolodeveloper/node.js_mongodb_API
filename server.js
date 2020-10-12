@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
 const errorHandler = require('./middleware/error');
-const app = express()
+
 
 // Load env vars
 dotenv.config({ path: './config/.env' });
@@ -13,9 +13,13 @@ dotenv.config({ path: './config/.env' });
 const connectDB = require('./config/db');
 connectDB();
 
-app.use(errorHandler);
+//route files
+const items = require('./routes/items');
 
+const app = express()
 
+// Body parser
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.status(200).json({
@@ -25,9 +29,18 @@ app.get('/', (req, res) => {
   })
 })
 
-app.listen(process.env.PORT, () => {
-  console.log(`Example app listening at http://localhost:${process.env.PORT}`.green.underline.bold)
-})
+// Mount routers
+app.use('/api/v1/items', items);
+
+//error handler middleware
+app.use(errorHandler);
+
+const server = app.listen(
+  PORT = process.env.PORT || 5000,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
+);
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
