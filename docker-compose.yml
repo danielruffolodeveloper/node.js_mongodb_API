@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api:
+    image: express_api
+    build: .
+    networks:
+      - backend
+    ports:
+      - "5000:5000"
+
+  web-cli:
+    image: express_api
+    networks:
+      - backend
+    command: sh
+
+networks:
+  backend:
+    driver: bridge
