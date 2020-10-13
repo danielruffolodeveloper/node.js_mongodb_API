@@ -4,8 +4,9 @@ const {
   getItems,
   createItem,
   updateItem,
-  deleteItem
- 
+  deleteItem,
+  getItemById
+
 } = require('../controllers/items.js');
 
 const router = express.Router();
@@ -15,9 +16,10 @@ router
   .get(getItems)
   .post(createItem)
 
-  router
+router
   .route('/:id')
   .put(updateItem)
+  .get(getItemById)
   .delete(deleteItem)
 
 

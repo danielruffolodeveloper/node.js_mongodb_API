@@ -9,7 +9,7 @@ Designed to be a simple starting repository for building a REST API using Mongod
 - Implementing MongoDB connection to cloud hosted instance
 - Implementing Item Model && Item CRUD endpoints
 - Adding Location Model && Location CRUD endpoints as well as relationship to Inventory Items
-- Writing unit tests
+- Writing unit tests using Jest and Supertest
 - Wrapping application in Docker Container environment
 
 ### Run locally:
