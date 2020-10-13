@@ -11,4 +11,4 @@ RUN npm install
 # expose the API running port to the outside world 
 EXPOSE 5000
 # CMD run the script in our package.json
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]

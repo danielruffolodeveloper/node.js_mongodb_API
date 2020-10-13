@@ -7,6 +7,8 @@ services:
       - backend
     ports:
       - "5000:5000"
+    volumes:
+      - ./:/usr/src/app
 
   web-cli:
     image: express_api
