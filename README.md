@@ -49,3 +49,27 @@ A message will appear as below:
 Server running in production mode on port 5000
 MongoDB Connected: your db details
 ```
+
+### Run using Docker:
+Refer to .env file setup first.
+
+Set dockerfile command to:
+```
+CMD ["npm", "run", "dev"]
+```
+for live reloading development mode.
+
+run:
+```
+docker-compose build && docker-compose up
+```
+
+A message will appear as below:
+
+```
+Server running in development mode on port 5000
+MongoDB Connected: your db details
+```
+
+changes to the server.js will reflect in the container as the volume will rebuild with Nodemon.js
+
