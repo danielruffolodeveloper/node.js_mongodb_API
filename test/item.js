@@ -85,4 +85,48 @@ describe('Items', () => {
         });
     });
 
+    /*
+ * Test the /PUT/:id route
+ */
+    describe('/PUT/:id item', () => {
+        it('it should UPDATE a item given the id', (done) => {
+            let item = new Item({ description: "Clay Bricks", quantity: 100 });
+            item.save((err, item) => {
+                chai.request(server)
+                    .put('/api/v1/items/' + item.id)
+                    .send({ description: "Red House Clay Bricks", quantity: 200 })
+                    .end((err, res) => {
+                        res.should.have.status(201);
+                        res.body.should.be.a('object');
+                        res.body.data.should.be.a('object');
+                        res.body.should.have.property('success').eql(true);
+                        res.body.data.should.have.property('description').eql("Red House Clay Bricks");
+                        res.body.data.should.have.property('quantity').eql(200);
+
+                        done();
+                    });
+            });
+        });
+    });
+
+    /*
+* Test the /DELETE/:id route
+*/
+    describe('/DELETE/:id item', () => {
+        it('it should DELETE a item given the id', (done) => {
+            let item = new Item({ description: "Clay Bricks", quantity: 100 });
+            item.save((err, item) => {
+                chai.request(server)
+                    .delete('/api/v1/items/' + item.id)
+                    .end((err, res) => {
+                        res.should.have.status(200);
+                        res.body.should.be.a('object');
+                        res.body.should.have.property('success').eql(true);
+                        res.body.should.have.property('msg').eql("Item Removed");
+                        done();
+                    });
+            });
+        });
+    });
+
 });
