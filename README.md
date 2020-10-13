@@ -1,11 +1,9 @@
-# Node.js && Mongodb API starter
-
+# Node.js && MongoDB API starter
+### Summary:
 Designed to be a simple starting repository for building a REST API using Mongodb, Express.js and Node.js.
 `By no means is this entirely production grade but it can be easily modified to be fit for that purpose.
 
-###
-
-Features:
+### Contents:
 
 - Implementing Express.js and routing
 - Implementing MongoDB connection to cloud hosted instance
