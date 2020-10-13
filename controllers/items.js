@@ -44,7 +44,6 @@ exports.createItem = asyncHandler(async (req, res, next) => {
 // @access    public
 exports.getItemById = asyncHandler(async (req, res, next) => {
   let item = await Item.findById(req.params.id);
-  console.log(item)
 
   if (!item) {
     return next(
